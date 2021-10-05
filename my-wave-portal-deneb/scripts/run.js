@@ -1,5 +1,5 @@
 const main = async () => {
-    const waveContractFactory = await hre.ethers.getContractFactory("wavePortal");
+    const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
     const waveContract = await waveContractFactory.deploy();
     // await for contract to be mined
     await waveContract.deployed()
