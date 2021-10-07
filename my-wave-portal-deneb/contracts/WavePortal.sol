@@ -8,4 +8,9 @@ contract WavePortal {
     constructor() {
         console.log("hey yo yeah~");
     }
+
+    function wave() public {
+        totalWaves += 1;
+        console.log("%s has waved", msg.sender);
+    }
 }
