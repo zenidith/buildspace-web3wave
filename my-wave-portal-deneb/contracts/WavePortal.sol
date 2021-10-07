@@ -11,6 +11,6 @@ contract WavePortal {
 
     function wave() public {
         totalWaves += 1;
-        console.log("%s has waved", msg.sender);
+        console.log("%s has waved and now totalWaves is %s", msg.sender, totalWaves);
     }
 }
