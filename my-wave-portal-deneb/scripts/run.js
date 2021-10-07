@@ -1,4 +1,5 @@
 const main = async () => {
+    const [owner, randomPerson] = await hre.ethers.getSigners();
     const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
     const waveContract = await waveContractFactory.deploy();
     // await for contract to be mined
@@ -8,14 +9,14 @@ const main = async () => {
     console.log("Contract deployed to -- ", waveContract.address)
     
     // notify miners of what we want
-    let waveTxn = await waveContract.wave();
+    let waveTransaction = await waveContract.wave();
 
     // wait for it to be mined
-    await waveTxn.wait();
+    await waveTransaction.wait();
 
     // wave again
-    waveTxn = await waveContract.wave();
-    await waveTxn.wait();
+    waveTransaction = await waveContract.wave();
+    await waveTransaction.wait();   
 
     console.log("Done waving!!!")
 }
